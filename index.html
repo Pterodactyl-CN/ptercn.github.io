@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+	<script>
+		var _hmt = _hmt || [];
+		(function () {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?313fb8d7e5896b6b958598665d5c1c64";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Pterodactyl 翼龙面板 &mdash; 开源的游戏服务器管理系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="baidu-site-verification" content="u72BHqX8qR" />
+	<meta name="description" content="Pterodactyl 翼龙面板是一款开源的游戏服务器管理系统，支持管理 Minecraft、CSGO等游戏的服务端，并且是完全免费、开源的。" />
+	<meta name="keywords" content="Pterodactyl,翼龙,翼龙面板,SakuraMC,我的世界面板,Multicraft,Sakura,sakura,SakurFrp,sakurafrp,frp,Nat映射,内网穿透,微信开发,Minecraft,我的世界,开服,映射,监控管理,本地建站,网站搭建,反向代理,免费内网穿透,内网穿透,微信开发,我的世界内网穿透,我的世界内网映射,nat123,ngrok,路由侠,花生壳,Minecraft面板,开服面板,游戏面板,Multicraft,multicraft,MU,mu" />
+
+	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content="" />
+	<meta property="og:image" content="" />
+	<meta property="og:url" content="" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:description" content="" />
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,600,400italic,700' rel='stylesheet' type='text/css'>
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Flexslider -->
+	<link rel="stylesheet" href="css/flexslider.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+
+	<!-- 
+	Default Theme Style 
+	You can change the style.css (default color purple) to one of these styles
+	
+	
+
+	-->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Styleswitcher ( This style is for demo purposes only, you may delete this anytime. ) -->
+	<link rel="stylesheet" id="theme-switch" href="css/style.css">
+	<!-- End demo purposes only -->
+
+
+	<style>
+
+	
+	/* For Demo Purposes Only ( You can delete this anytime :-) */
+	#colour-variations {
+		padding: 10px;
+		-webkit-transition: 0.5s;
+	  	-o-transition: 0.5s;
+	  	transition: 0.5s;
+		width: 140px;
+		position: fixed;
+		left: 0;
+		top: 100px;
+		z-index: 999999;
+		background: #fff;
+		/*border-radius: 4px;*/
+		border-top-right-radius: 4px;
+		border-bottom-right-radius: 4px;
+		-webkit-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+		-moz-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+		-ms-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+		box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+	}
+	#colour-variations.sleep {
+		margin-left: -140px;
+	}
+	#colour-variations h3 {
+		text-align: center;;
+		font-size: 11px;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		color: #777;
+		margin: 0 0 10px 0;
+		padding: 0;;
+	}
+
+	#colour-variations ul,
+	#colour-variations ul li {
+		padding: 0;
+		margin: 0;
+	}
+	#colour-variations ul {
+		margin-bottom: 20px;
+		float: left;	
+	}
+	#colour-variations li {
+		list-style: none;
+		display: inline;
+	}
+	#colour-variations li a {
+		width: 20px;
+		height: 20px;
+		position: relative;
+		float: left;
+		margin: 5px;
+	}
+
+
+
+	#colour-variations li a[data-theme="style"] {
+		background: #8dc63f;
+	}
+	#colour-variations li a[data-theme="red"] {
+		background: #FA5555;
+	}
+	#colour-variations li a[data-theme="turquoise"] {
+		background: #27E1CE;
+	}
+	#colour-variations li a[data-theme="blue"] {
+		background: #2772DB;
+	}
+	#colour-variations li a[data-theme="orange"] {
+		background: #FF7844;
+	}
+	#colour-variations li a[data-theme="yellow"] {
+		background: #FCDA05;
+	}
+	#colour-variations li a[data-theme="pink"] {
+		background: #F64662;
+	}
+	#colour-variations li a[data-theme="purple"] {
+		background: #7045FF;
+	}
+
+	#colour-variations a[data-layout="boxed"],
+	#colour-variations a[data-layout="wide"] {
+		padding: 2px 0;
+		width: 48%;
+		border: 1px solid #ededed;
+		text-align: center;
+		color: #777;
+		display: block;
+	}
+	#colour-variations a[data-layout="boxed"]:hover,
+	#colour-variations a[data-layout="wide"]:hover {
+		border: 1px solid #777;
+	}
+	#colour-variations a[data-layout="boxed"] {
+		float: left;
+	}
+	#colour-variations a[data-layout="wide"] {
+		float: right;
+	}
+
+	.option-toggle {
+		position: absolute;
+		right: 0;
+		top: 0;
+		margin-top: 5px;
+		margin-right: -30px;
+		width: 30px;
+		height: 30px;
+		background: #8dc63f;
+		text-align: center;
+		border-top-right-radius: 4px;
+		border-bottom-right-radius: 4px;
+		color: #fff;
+		cursor: pointer;
+		-webkit-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+		-moz-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+		-ms-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+		box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+	}
+	.option-toggle i {
+		top: 2px;
+		position: relative;
+	}
+	.option-toggle:hover, .option-toggle:focus, .option-toggle:active {
+		color:  #fff;
+		text-decoration: none;
+		outline: none;
+	}
+	</style>
+	<!-- End demo purposes only -->
+
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+
+
+<!-- 
+		INFO:
+		Add 'boxed' class to body element to make the layout as boxed style.
+		Example: 
+		<body class="boxed">	
+	-->
+<!-- Matomo -->
+<script type="text/javascript">
+	var _paq = _paq || [];
+	/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+	_paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+	_paq.push(["setCookieDomain", "*.skin.misakacloud.cn"]);
+	_paq.push(["setDomains", ["*.skin.misakacloud.cn"]]);
+	_paq.push(['trackPageView']);
+	_paq.push(['enableLinkTracking']);
+	(function () {
+		var u = "//status.pterodactyl.org.cn/";
+		_paq.push(['setTrackerUrl', u + 'piwik.php']);
+		_paq.push(['setSiteId', '4']);
+		var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+		g.type = 'text/javascript'; g.async = true; g.defer = true; g.src = u + 'piwik.js'; s.parentNode.insertBefore(g, s);
+	})();
+</script>
+<!-- End Matomo Code -->
+
+<!-- Start of Rocket.Chat Livechat Script -->
+<script type="text/javascript">
+	(function (w, d, s, u) {
+		w.RocketChat = function (c) { w.RocketChat._.push(c) }; w.RocketChat._ = []; w.RocketChat.url = u;
+		var h = d.getElementsByTagName(s)[0], j = d.createElement(s);
+		j.async = true; j.src = 'https://chat.pterodactyl.org.cn/packages/rocketchat_livechat/assets/rocketchat-livechat.min.js?_=201702160944';
+		h.parentNode.insertBefore(j, h);
+	})(window, document, 'script', 'https://chat.pterodactyl.org.cn/livechat');
+</script>
+<!-- End of Rocket.Chat Livechat Script -->
+
+<body>
+
+	<!-- Loader -->
+	<div class="fh5co-loader"></div>
+
+	<div id="fh5co-page">
+		<section id="fh5co-header">
+			<div class="container">
+				<nav role="navigation">
+					<ul class="pull-left left-menu">
+						<li><a href="#">首页</a></li>
+						<li><a href="#Pterodactyl">介绍</a></li>
+						<li><a href="https://docs.pterodactyl.org.cn/" target="_blank">文档</a></li>
+						<li><a href="https://bbs.pterodactyl.org.cn/" target="_blank">论坛</a></li>
+						<li><a href="#aboutus">关于</a></li>
+					</ul>
+					<h1 id="fh5co-logo"><a href="#">Pterodactyl</a></h1>
+					<!--<ul class="pull-right right-menu">
+						<li><a href="#">Login</a></li>
+						<li class="fh5co-cta-btn"><a href="#">Sign up</a></li>
+					</ul>-->
+				</nav>
+			</div>
+		</section>
+		<!-- #fh5co-header -->
+
+		<section id="fh5co-hero" class="js-fullheight" style="background-image: url(images/hero_bg.jpg);" data-next="yes">
+			<div class="fh5co-overlay"></div>
+			<div class="container">
+				<div class="fh5co-intro js-fullheight">
+					<div class="fh5co-intro-text">
+						<!-- 
+							INFO:
+							Change the class to 'fh5co-right-position' or 'fh5co-center-position' to change the layout position
+							Example:
+							<div class="fh5co-right-position">
+						-->
+						<div class="fh5co-left-position">
+							<h2 class="animate-box">Pterodactyl</h2>
+							<h3 class="animate-box">免费开源的游戏服务器管理面板</h3>
+							<p class="animate-box"><a href="https://docs.pterodactyl.org.cn/" target="_blank" class="btn btn-outline popup-vimeo btn-video">阅读文档</a>
+								<a href="https://www.bilibili.com/read/cv954121/" target="_blank" class="btn btn-primary">立即使用</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="fh5co-learn-more animate-box">
+				<a href="#" class="scroll-btn">
+					<span class="text">下拉查看更多</span>
+					<span class="arrow"><i class="icon-chevron-down"></i></span>
+				</a>
+			</div>
+		</section>
+
+		<a name="Pterodactyl"></a>
+		<section id="fh5co-projects">
+			<div class="container">
+				<div class="row row-bottom-padded-md">
+					<div class="col-md-6 col-md-offset-3 text-center">
+						<h2 class="fh5co-lead animate-box">翼龙面板</h2>
+						<p class="fh5co-sub-lead animate-box">完全免费、开源的游戏服务器管理面板，支持 Minecraft、CSGO 等游戏的服务端</p>
+					</div>
+				</div>
+				<div class="row">
+
+					<div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
+						<a href="images/screenshots/api.png" class="fh5co-project-item image-popup">
+							<img src="images/screenshots/api.png" alt="Image" class="img-responsive">
+							<div class="fh5co-text">
+								<h2>完全开放的 API</h2>
+								<p>利用 API，您可以开发任何对接 Pterodactyl 的插件，连接您的网站，自动化出售等。</p>
+							</div>
+						</a>
+					</div>
+
+					<div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
+						<a href="images/screenshots/fileedit.png" class="fh5co-project-item image-popup">
+							<img src="images/screenshots/fileedit.png" alt="Image" class="img-responsive">
+							<div class="fh5co-text">
+								<h2>在线文件编辑工具</h2>
+								<p>您无需为了修改服务器配置文件而启动SFTP软件，只需使用在线编辑器修改后保存即可。</p>
+							</div>
+						</a>
+					</div>
+
+					<div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
+						<a href="images/screenshots/console.png" class="fh5co-project-item image-popup">
+							<img src="images/screenshots/console.png" alt="Image" class="img-responsive">
+							<div class="fh5co-text">
+								<h2>功能齐全的控制台</h2>
+								<p>基于 WebSocket 的网页命令控制台，完全自由掌控服务器，就像直接操作命令行一样。</p>
+							</div>
+						</a>
+					</div>
+
+					<div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
+						<a href="images/screenshots/filemanager.png" class="fh5co-project-item image-popup">
+							<img src="images/screenshots/filemanager.png" alt="Image" class="img-responsive">
+							<div class="fh5co-text">
+								<h2>方便的文件管理器</h2>
+								<p>在您的设备上没有好用的 SFTP 软件？别担心，我们的面板集成了多功能文件管理器。</p>
+							</div>
+						</a>
+					</div>
+
+					<div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
+						<a href="images/screenshots/node-listing.png" class="fh5co-project-item image-popup">
+							<img src="images/screenshots/node-listing.png" alt="Image" class="img-responsive">
+							<div class="fh5co-text">
+								<h2>多节点服务器支持</h2>
+								<p>翼龙面板支持连接到多个后端程序，您完全可以用于部署分布式服务器负载均衡节点。</p>
+							</div>
+						</a>
+					</div>
+
+					<div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
+						<a href="images/screenshots/server-startup.png" class="fh5co-project-item image-popup">
+							<img src="images/screenshots/server-startup.png" alt="Image" class="img-responsive">
+							<div class="fh5co-text">
+								<h2>可自定义启动参数</h2>
+								<p>如果您的服务端需要特殊的启动参数，您完全可以在设置中指定核心JAR名称和参数。</p>
+							</div>
+						</a>
+					</div>
+
+
+				</div>
+			</div>
+		</section>
+		<!-- END #fh5co-projects -->
+
+		<section id="fh5co-features">
+			<div class="container">
+				<div class="row text-center row-bottom-padded-md">
+					<div class="col-md-8 col-md-offset-2">
+						<figure class="fh5co-devices animate-box"><img src="images/img_devices.png" alt="Free HTML5 Bootstrap Template"
+							 class="img-responsive"></figure>
+						<h2 class="fh5co-lead animate-box">响应式前端网页设计</h2>
+						<p class="fh5co-sub-lead animate-box">我们的管理面板对于移动设备兼容性非常好，无论您是使用高清电视、个人电脑、平板还是手机访问管理面板，都可以获得极佳的使用体验。同时面板使用了
+							Laravel Blade 模板引擎，您可以方便快捷地制作出美观大气的面板主题。</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-sm-6 col-xs-12 animate-box">
+						<div class="fh5co-feature">
+							<div class="fh5co-icon">
+								<i class="icon-lock"></i>
+							</div>
+							<h3>安全性</h3>
+							<p>安全永远是我们最主要的考虑，翼龙面板不使用MD5，我们使用最新的安全标准例如 BCrypt 和 AES-256-CBC</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-12 animate-box">
+						<div class="fh5co-feature">
+							<div class="fh5co-icon">
+								<i class="icon-flag2"></i>
+							</div>
+							<h3>自定义</h3>
+							<p>翼龙面板使用 Blade 模板引擎，您可以自由修改和创作新的 CSS，面板前端几乎任何地方都可以修改和自定义。</p>
+						</div>
+					</div>
+					<div class="clearfix visible-sm-block"></div>
+					<div class="col-md-4 col-sm-6 col-xs-12 animate-box">
+						<div class="fh5co-feature">
+							<div class="fh5co-icon">
+								<i class="icon-anchor"></i>
+							</div>
+							<h3>Docker</h3>
+							<p>翼龙面板支持利用 Docker 控制服务器资源分配并加强网络控制管理的游戏面板，利用容器虚拟化保证安全性。</p>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-sm-6 col-xs-12 animate-box">
+						<div class="fh5co-feature">
+							<div class="fh5co-icon">
+								<i class="icon-paragraph"></i>
+							</div>
+							<h3>用户友好</h3>
+							<p>翼龙面板的界面布局简洁、大方，即使您以前没有使用过面板，也可以轻松地学会如何使用翼龙面板进行管理。</p>
+						</div>
+					</div>
+					<div class="clearfix visible-sm-block"></div>
+					<div class="col-md-4 col-sm-6 col-xs-12 animate-box">
+						<div class="fh5co-feature">
+							<div class="fh5co-icon">
+								<i class="icon-umbrella"></i>
+							</div>
+							<h3>完全免费</h3>
+							<p>与其他付费的游戏面板相比，翼龙面板最大的优势就在于完全免费、开源，您不再需要为了面板而多花一分钱。</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-12 animate-box">
+						<div class="fh5co-feature">
+							<div class="fh5co-icon">
+								<i class="icon-toggle"></i>
+							</div>
+							<h3>可扩展性</h3>
+							<p>无论您是用于商业化服务器出租，还是个人开服，翼龙面板都能为您提供全方面的技术支持，详情请访问社区。</p>
+						</div>
+					</div>
+					<div class="clearfix visible-sm-block"></div>
+				</div>
+			</div>
+		</section>
+
+		<!-- END #fh5co-features -->
+
+
+		<section id="fh5co-features-2">
+			<div class="container">
+				<div class="col-md-6 col-md-push-6">
+					<figure class="fh5co-feature-image animate-box">
+						<img src="images/macbook.png" alt="Free HTML5 Bootstrap Template by FREEHTML5.co">
+					</figure>
+				</div>
+				<div class="col-md-6 col-md-pull-6">
+					<span class="fh5co-label animate-box">翼龙面板的特性</span>
+					<h2 class="fh5co-lead animate-box">为什么选择翼龙面板</h2>
+					<div class="fh5co-feature">
+						<div class="fh5co-icon animate-box"><i class="icon-check2"></i></div>
+						<div class="fh5co-text animate-box">
+							<h3>美观大气</h3>
+							<p>翼龙面板基于 Blade 模板引擎，简洁、美观、大方的前端网页设计，响应式网页兼容各种平台以及移动设备访问。</p>
+						</div>
+					</div>
+					<div class="fh5co-feature">
+						<div class="fh5co-icon animate-box"><i class="icon-check2"></i></div>
+						<div class="fh5co-text animate-box">
+							<h3>完全免费</h3>
+							<p>您无需再为了使用游戏面板而花高价去购买商业授权，翼龙面板完全免费、开源，并且功能绝不会逊色于其他面板。</p>
+						</div>
+					</div>
+					<div class="fh5co-feature">
+						<div class="fh5co-icon animate-box"><i class="icon-check2"></i></div>
+						<div class="fh5co-text animate-box">
+							<h3>自由扩展</h3>
+							<p>您可以轻松将翼龙面板对接到您的其他网站程序，例如 WHMCS 和 WordPress，并且可以使用它们进行自动化销售。</p>
+						</div>
+					</div>
+
+					<div class="fh5co-btn-action animate-box">
+						<a href="https://www.bilibili.com/read/cv954121/" class="btn btn-primary btn-cta">立即使用</a>
+					</div>
+
+				</div>
+			</div>
+		</section>
+		<!-- END #fh5co-features-2 -->
+
+		<section id="fh5co-testimonials">
+			<div class="container">
+				<div class="row row-bottom-padded-sm">
+					<div class="col-md-6 col-md-offset-3 text-center">
+						<div class="fh5co-label animate-box">用户评价</div>
+						<h2 class="fh5co-lead animate-box">来自我们用户的评价</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center animate-box">
+						<div class="flexslider">
+							<ul class="slides">
+								<li>
+									<blockquote>
+										<p>&ldquo;翼龙面板是我使用过最好用的一款游戏面板，它几乎包含了其他面板的所有功能，甚至还有很多付费面板所没有的功能，这一点我觉得非常好。&rdquo;</p>
+										<p><cite>&mdash; Sakura YAMI</cite></p>
+									</blockquote>
+								</li>
+								<li>
+									<blockquote>
+										<p>&ldquo;翼龙面板除了部署起来步骤比较复杂，功能上还是很强大的，无论是服务商出租还是个人使用都很适合，这确实是一款很好的面板，支持开源。&rdquo;</p>
+										<p><cite>&mdash; Timewk</cite></p>
+									</blockquote>
+								</li>
+								<li>
+									<blockquote>
+										<p>&ldquo;我第一次使用翼龙面板的时候就觉得这个面板真的非常好，再也不需要高价去购买商业授权了，并且它有 Docker 容器虚拟化支持，非常安全。&rdquo;</p>
+										<p><cite>&mdash; Gzzchh</cite></p>
+									</blockquote>
+								</li>
+							</ul>
+						</div>
+						<div class="flexslider-controls">
+							<ol class="flex-control-nav">
+								<li class="animate-box"><img src="images/sakurayami.jpg" alt=""></li>
+								<li class="animate-box"><img src="images/timewk.jpg" alt=""></li>
+								<li class="animate-box"><img src="images/gzzchh.png" alt=""></li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- END #fh5co-testimonials -->
+
+		<section id="fh5co-subscribe">
+			<div class="container">
+
+				<h3 class="animate-box"><label for="email">加入我们的 QQ 群参与讨论</label></h3>
+				<form action="#" method="post" class="animate-box">
+					<!--<i class="fh5co-icon icon-paper-plane"></i>
+					<input type="email" class="form-control" placeholder="Enter your email" id="email" name="email">
+					<input type="submit" value="Send" class="btn btn-primary">-->
+					<div align="right"><button class="animate-box btn btn-primary">点击加群</button></div>
+				</form>
+
+			</div>
+		</section>
+		<!-- END #fh5co-subscribe -->
+
+		<a name="aboutus"></a>
+		<footer id="fh5co-footer">
+			<div class="container">
+				<div class="row row-bottom-padded-md">
+					<div class="col-md-8 col-sm-6 col-xs-12 animate-box">
+						<div class="fh5co-footer-widget">
+							<h3>关于我们</h3>
+							<p>本站是 Pterodactyl 翼龙面板中文网站，英文官网请访问 Pterodactyl.io</p>
+							<p>中文站点、教程、文档以及技术支持由 MC部落 / SakuraMC / Timewk Studio / TrollCraft 合作提供。</p>
+						</div>
+					</div>
+
+					<div class="col-md-2 col-sm-6 col-xs-12 animate-box">
+						<div class="fh5co-footer-widget">
+							<h3>技术支持</h3>
+							<ul class="fh5co-links">
+								<li><a href="//shang.qq.com/wpa/qunwpa?idkey=da69374d4a959aa6031e255e976bffca8478799dffcf8ea2bf2e0ba7fe680f38">QQ
+										群支持</a></li>
+								<li><a href="https://bbs.pterodactyl.org.cn/">中文交流论坛</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-2 col-sm-6 col-xs-12 animate-box">
+						<div class="fh5co-footer-widget">
+							<h3>关注我们</h3>
+							<ul class="fh5co-social">
+								<li><a href="https://github.com/Pterodactyl-CN/" target="_blank"><i class="icon-github"></i></a></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+			<div class="fh5co-copyright animate-box">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<p class="fh5co-left"><small>&copy; 2018 <a href="https://www.pterodactyl.org.cn/">翼龙中国社区</a> 保留所有权利.</small></p>
+							<p class="fh5co-right"><small class="fh5co-right">智汇互联（天津）科技有限公司</small><a href="http://www.miitbeian.gov.cn/"
+								 target="_blank">津ICP备16004663号-3</a></p>
+							<!--<p class="fh5co-right"><small class="fh5co-right">CDN 加速服务器支持由 <a href="https://www.sakuramc.org/" target="_blank" title="SakuraMC">SakuraMC</a> 提供</small></p>-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- END #fh5co-footer -->
+	</div>
+	<!-- END #fh5co-page -->
+
+	<!-- For demo purposes Only ( You may delete this anytime :-) -->
+	<div id="colour-variations" class="sleep">
+		<a class="option-toggle"><i class="icon-gear"></i></a>
+		<h3>选择颜色</h3>
+		<ul>
+			<li><a href="javascript: void(0);" data-theme="style"></a></li>
+			<li><a href="javascript: void(0);" data-theme="red"></a></li>
+			<li><a href="javascript: void(0);" data-theme="turquoise"></a></li>
+			<li><a href="javascript: void(0);" data-theme="blue"></a></li>
+			<li><a href="javascript: void(0);" data-theme="orange"></a></li>
+			<li><a href="javascript: void(0);" data-theme="yellow"></a></li>
+			<li><a href="javascript: void(0);" data-theme="pink"></a></li>
+			<li><a href="javascript: void(0);" data-theme="purple"></a></li>
+		</ul>
+		<a href="#" data-layout="boxed">窄版</a>
+		<a href="#" data-layout="wide">宽版</a>
+	</div>
+	<!-- End demo purposes only -->
+
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/magnific-popup-options.js"></script>
+
+	<!-- For demo purposes only styleswitcher ( You may delete this anytime ) -->
+	<script src="js/jquery.style.switcher.js"></script>
+	<script>
+		$(function () {
+			$('#colour-variations ul').styleSwitcher({
+				defaultThemeId: 'theme-switch',
+				hasPreview: false,
+				cookie: {
+					expires: 30,
+					isManagingLoad: true
+				}
+			});
+			$('.option-toggle').click(function () {
+				$('#colour-variations').toggleClass('sleep');
+			});
+		});
+	</script>
+	<!-- End demo purposes only -->
+
+	<!-- Main JS (Do not remove) -->
+	<script src="js/main.js"></script>
+
+	<!-- 
+	INFO:
+	jQuery Cookie for Demo Purposes Only. 
+	The code below is to toggle the layout to boxed or wide 
+	-->
+	<script src="js/jquery.cookie.js"></script>
+	<script>
+		$(function () {
+
+			if ($.cookie('layoutCookie') != '') {
+				$('body').addClass($.cookie('layoutCookie'));
+			}
+
+			$('a[data-layout="boxed"]').click(function (event) {
+				event.preventDefault();
+				$.cookie('layoutCookie', 'boxed', { expires: 7, path: '/' });
+				$('body').addClass($.cookie('layoutCookie')); // the value is boxed.
+			});
+
+			$('a[data-layout="wide"]').click(function (event) {
+				event.preventDefault();
+				$('body').removeClass($.cookie('layoutCookie')); // the value is boxed.
+				$.removeCookie('layoutCookie', { path: '/' }); // remove the value of our cookie 'layoutCookie'
+			});
+		});
+	</script>
+<script>
+	(function(){
+		var bp = document.createElement('script');
+		var curProtocol = window.location.protocol.split(':')[0];
+		if (curProtocol === 'https') {
+			bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+		}
+		else {
+			bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+		}
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(bp, s);
+	})();
+	</script>
+
+</body>
+
+</html>
